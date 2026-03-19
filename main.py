@@ -1,8 +1,9 @@
+
+import os
 import telebot
 from telebot import types
 
-
-BOT_TOKEN = ""
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # ===================== USER DATA STORE =====================
