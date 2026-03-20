@@ -27,8 +27,21 @@ def back_menu():
 # ===================== START =====================
 @bot.message_handler(commands=["start"])
 def start(msg):
-    bot.send_message(msg.chat.id, "🚀 Futures Trading Bot UI", reply_markup=main_menu())
+    text = (
+        "🚀 *Welcome to Your Trading Bot*\n\n"
+        "⚡ Advanced crypto futures trading interface\n"
+        "📊 Multiple strategies (SMA, Envelope, more coming)\n"
+        "🧠 Built for precision & automation\n\n"
+        "📘 [Documentation](https://your-link-here.com)\n\n"
+        "👇 Choose an option below to begin:"
+    )
 
+    bot.send_message(
+        msg.chat.id,
+        text,
+        reply_markup=main_menu(),
+        parse_mode="Markdown"
+    )
 # ===================== TRADING ENTRY =====================
 @bot.message_handler(func=lambda m: m.text == "📈 Trading")
 def trading(msg):
